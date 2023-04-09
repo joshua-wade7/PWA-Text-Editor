@@ -22,7 +22,10 @@ module.exports = () => {
         template: "./index,html",
         title: "JATE app",
       }),
-      new InjectManifest({}), //need to look into inject Manifest docs for what to include.
+      new InjectManifest({
+        swSrc: "./src-sw.js",
+        swDest: "src-sw.js",
+      }), //need to look into inject Manifest docs for what to include.
       new WebpackPwaManifest({
         name: "Just Another Text Editor",
         short_name: "J.A.T.E",
